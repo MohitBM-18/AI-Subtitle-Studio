@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Environment variables – KEEP PRIVATE
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Logs
+*.log
+
+# Media storage – large binary files don't belong in Git
+storage/uploads/
+storage/temporary/
+storage/outputs/
+
+# Keep the folders themselves (via .gitkeep)
+!storage/uploads/.gitkeep
+!storage/temporary/.gitkeep
+!storage/outputs/.gitkeep

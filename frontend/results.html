@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Video is Ready – AI Subtitle Studio</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="app-page">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">🎬 AI Subtitle Studio</a>
+  </div>
+</nav>
+
+<main class="app-main results-main">
+  <div class="results-card">
+    <div class="success-icon">🎉</div>
+    <h1>Your Video is Ready!</h1>
+    <p class="results-sub">Subtitles are permanently embedded. Play it below or download the MP4.</p>
+
+    <!-- Final video player -->
+    <div class="video-wrapper results-video">
+      <video id="result-video" controls playsinline></video>
+    </div>
+
+    <!-- Actions -->
+    <div class="results-actions">
+      <a id="download-btn" class="btn btn-primary btn-lg" href="#" download>
+        ⬇️ Download MP4
+      </a>
+      <a class="btn btn-secondary btn-lg" href="/upload.html">
+        Process Another Video
+      </a>
+    </div>
+
+    <!-- Metadata -->
+    <div id="video-meta" class="video-meta"></div>
+  </div>
+</main>
+
+<script src="/static/js/results.js"></script>
+</body>
+</html>

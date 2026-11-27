@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configure Subtitles – AI Subtitle Studio</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="app-page">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">🎬 AI Subtitle Studio</a>
+  </div>
+</nav>
+
+<main class="app-main editor-layout">
+
+  <!-- Left panel: config -->
+  <aside class="config-panel">
+    <h2>Subtitle Settings</h2>
+
+    <!-- Language info -->
+    <div class="form-group">
+      <label>Detected Language</label>
+      <div id="detected-lang" class="info-badge">Auto-detecting…</div>
+    </div>
+
+    <!-- Subtitle mode -->
+    <div class="form-group">
+      <label>Subtitle Mode</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active" data-value="sentence" id="btn-sentence">📝 Sentence</button>
+        <button class="toggle-btn" data-value="karaoke" id="btn-karaoke">🎤 Karaoke</button>
+      </div>
+    </div>
+
+    <!-- Output type -->
+    <div class="form-group">
+      <label>Output</label>
+      <select id="output-type" class="select">
+        <option value="original">Original language only</option>
+        <option value="translated">Translated only</option>
+        <option value="both">Original + Translation</option>
+      </select>
+    </div>
+
+    <!-- Translation target -->
+    <div id="translation-row" class="form-group hidden">
+      <label>Translate to</label>
+      <select id="target-lang" class="select">
+        <option value="English">English</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Kannada">Kannada</option>
+        <option value="Tamil">Tamil</option>
+        <option value="Telugu">Telugu</option>
+        <option value="Malayalam">Malayalam</option>
+        <option value="Bengali">Bengali</option>
+        <option value="Marathi">Marathi</option>
+        <option value="Spanish">Spanish</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Italian">Italian</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Korean">Korean</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Russian">Russian</option>
+      </select>
+    </div>
+
+    <!-- Resolution -->
+    <div class="form-group">
+      <label>Output Resolution</label>
+      <select id="resolution" class="select">
+        <option value="same">Original (keep as-is)</option>
+        <option value="1080p">1080p (1920×1080)</option>
+        <option value="720p">720p (1280×720)</option>
+        <option value="480p">480p (854×480)</option>
+        <option value="portrait">Portrait 9:16 (1080×1920)</option>
+        <option value="square">Square 1:1 (1080×1080)</option>
+      </select>
+    </div>
+
+    <!-- Style presets -->
+    <div class="form-group">
+      <label>Style Preset</label>
+      <div class="preset-grid">
+        <button class="preset-btn active" data-preset="youtube">YouTube</button>
+        <button class="preset-btn" data-preset="instagram">Instagram</button>
+        <button class="preset-btn" data-preset="tiktok">TikTok</button>
+        <button class="preset-btn" data-preset="cinematic">Cinematic</button>
+        <button class="preset-btn" data-preset="corporate">Corporate</button>
+        <button class="preset-btn" data-preset="karaoke">Karaoke</button>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Font controls -->
+    <details class="collapsible">
+      <summary>Typography &amp; Colour</summary>
+      <div class="form-group">
+        <label>Font Size <span id="font-size-val">28px</span></label>
+        <input type="range" id="font-size" min="14" max="60" value="28" class="slider" />
+      </div>
+      <div class="form-group">
+        <label>Text Colour</label>
+        <input type="color" id="text-color" value="#ffffff" class="color-input" />
+      </div>
+      <div class="form-group">
+        <label>Highlight Colour</label>
+        <input type="color" id="highlight-color" value="#ffcc00" class="color-input" />
+      </div>
+      <div class="form-group">
+        <label>Background Colour</label>
+        <input type="color" id="bg-color" value="#000000" class="color-input" />
+      </div>
+      <div class="form-group">
+        <label>Background Opacity <span id="bg-opacity-val">70%</span></label>
+        <input type="range" id="bg-opacity" min="0" max="100" value="70" class="slider" />
+      </div>
+      <div class="form-group">
+        <label>Position</label>
+        <select id="position" class="select">
+          <option value="bottom">Bottom (default)</option>
+          <option value="top">Top</option>
+          <option value="middle">Middle</option>
+        </select>
+      </div>
+    </details>
+
+    <div class="action-row">
+      <button id="process-btn" class="btn btn-primary btn-lg">
+        🚀 Process Video
+      </button>
+    </div>
+  </aside>
+
+  <!-- Right panel: preview -->
+  <div class="preview-panel">
+    <h2>Preview</h2>
+    <div class="video-wrapper">
+      <video id="preview-video" controls muted playsinline></video>
+      <div id="subtitle-overlay" class="subtitle-overlay"></div>
+    </div>
+    <div id="transcript-list" class="transcript-list"></div>
+  </div>
+
+</main>
+
+<script src="/static/js/editor.js"></script>
+</body>
+</html>

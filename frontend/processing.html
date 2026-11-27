@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Processing – AI Subtitle Studio</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="app-page">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">🎬 AI Subtitle Studio</a>
+  </div>
+</nav>
+
+<main class="app-main processing-main">
+  <div class="processing-card">
+    <div class="processing-icon" id="proc-icon">⚙️</div>
+    <h2 id="proc-title">Processing your video…</h2>
+    <p id="proc-stage" class="proc-stage">Starting…</p>
+
+    <!-- Overall progress bar -->
+    <div class="progress-bar-bg">
+      <div id="proc-bar" class="progress-bar-fill" style="width:0%"></div>
+    </div>
+    <p id="proc-pct" class="proc-pct">0%</p>
+
+    <!-- Stage checklist -->
+    <ul class="stage-list" id="stage-list">
+      <li class="stage-item" id="st-upload">📤 Uploading video</li>
+      <li class="stage-item" id="st-audio">🎵 Extracting audio</li>
+      <li class="stage-item" id="st-lang">🌍 Detecting language</li>
+      <li class="stage-item" id="st-transcribe">🎙️ Transcribing speech</li>
+      <li class="stage-item" id="st-timestamps">⏱️ Generating timestamps</li>
+      <li class="stage-item" id="st-translate">🌐 Translating subtitles</li>
+      <li class="stage-item" id="st-render">🎬 Rendering video</li>
+      <li class="stage-item" id="st-finalise">✅ Finalising output</li>
+    </ul>
+
+    <!-- Error message -->
+    <div id="proc-error" class="alert alert-error hidden"></div>
+
+    <!-- Cancel -->
+    <button id="cancel-btn" class="btn btn-ghost" style="margin-top:1.5rem">Cancel</button>
+  </div>
+</main>
+
+<script src="/static/js/processing.js"></script>
+</body>
+</html>
